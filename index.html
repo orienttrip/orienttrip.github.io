@@ -1,1 +1,952 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORIENTTRIP 东方之旅 — Travel China with a Local Friend</title>
+  <meta name="description" content="I'm Joey — a Beijing-based independent guide. For the past decade I've shown travelers from over 30 countries the China I grew up in. Let me plan yours." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="#">
+      <span class="brand__mark">东</span>
+      <span class="brand__name">
+        <span class="brand__en">ORIENTTRIP</span>
+        <span class="brand__cn">东 · 方 · 之 · 旅</span>
+      </span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#guide">Your Guide</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#journeys">Journeys</a></li>
+      <li><a href="#services">How We Travel</a></li>
+      <li><a href="#voices">Friends</a></li>
+    </ul>
+    <a href="#inquiry" class="nav__cta">Say Hello</a>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<header class="hero">
+
+  <div class="hero__sun"></div>
+
+  <div class="hero__mountains" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="mFar" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%"  stop-color="#9A9285" stop-opacity="0.32"/>
+          <stop offset="100%" stop-color="#9A9285" stop-opacity="0.55"/>
+        </linearGradient>
+        <linearGradient id="mMid" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%"  stop-color="#6B6358" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#3A332C" stop-opacity="0.85"/>
+        </linearGradient>
+        <linearGradient id="mNear" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%"  stop-color="#2A241E" stop-opacity="0.92"/>
+          <stop offset="100%" stop-color="#1A1714" stop-opacity="1"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#mFar)" d="M0,650 C 140,560 240,610 360,540 C 460,480 560,560 700,500 C 820,450 940,520 1080,480 C 1220,440 1340,520 1480,470 C 1540,450 1600,470 1600,470 L1600,900 L0,900 Z"/>
+      <path fill="url(#mMid)" d="M0,750 C 100,680 220,720 340,660 C 460,600 580,690 720,640 C 860,590 980,660 1120,610 C 1260,560 1400,640 1520,600 C 1560,585 1600,600 1600,600 L1600,900 L0,900 Z"/>
+      <path fill="url(#mNear)" d="M0,820 C 120,780 260,810 380,770 C 500,730 640,810 780,770 C 920,730 1060,800 1200,760 C 1340,720 1480,790 1600,760 L1600,900 L0,900 Z"/>
+      <g transform="translate(280, 818)" opacity="0.85">
+        <path d="M0,0 Q12,8 30,8 Q48,8 60,0 L52,4 L8,4 Z" fill="#1A1714"/>
+        <line x1="30" y1="0" x2="30" y2="-22" stroke="#1A1714" stroke-width="1.4"/>
+        <path d="M30,-22 Q44,-18 42,-6 L30,-6 Z" fill="#1A1714" opacity="0.7"/>
+      </g>
+      <g stroke="#3A332C" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.55">
+        <path d="M420,260 q8,-6 16,0 q8,-6 16,0"/>
+        <path d="M490,300 q6,-5 12,0 q6,-5 12,0"/>
+        <path d="M560,250 q5,-4 10,0 q5,-4 10,0"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="container hero__content">
+    <p class="hero__title-cn">东 方 之 旅</p>
+    <h1 class="hero__title">
+      Let me show you<br/>
+      <em>the China</em><br/>
+      <span class="brush">I grew up in.</span>
+    </h1>
+
+    <div class="hero__sub">
+      <span class="hero__sub-bar"></span>
+      <p>
+        Hi, I'm <strong>Joey</strong> — an independent Beijing-based guide.
+        For the past ten years I've walked travelers from more than thirty
+        countries through the mountains, hutongs and night markets of China —
+        one small group at a time, in English or Mandarin.
+      </p>
+    </div>
+
+    <div class="hero__cta-row">
+      <a href="#guide" class="btn btn--primary">
+        Meet Your Guide <span class="arrow"></span>
+      </a>
+      <a href="#inquiry" class="btn btn--ghost">
+        Plan a Trip <span class="arrow"></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Seal -->
+  <svg class="hero__seal" viewBox="0 0 110 110" aria-hidden="true">
+    <rect x="6" y="6" width="98" height="98" rx="4" fill="#B83A2C"/>
+    <rect x="11" y="11" width="88" height="88" rx="2" fill="none" stroke="#F5EFE0" stroke-width="1.4" opacity="0.55"/>
+    <text x="55" y="44" text-anchor="middle"
+          font-family="Noto Serif SC, Songti SC, serif"
+          font-size="34" font-weight="600" fill="#F5EFE0">东方</text>
+    <text x="55" y="84" text-anchor="middle"
+          font-family="Noto Serif SC, Songti SC, serif"
+          font-size="34" font-weight="600" fill="#F5EFE0">之旅</text>
+  </svg>
+
+  <div class="hero__scroll">
+    <span>Scroll</span>
+    <span class="hero__scroll-line"></span>
+  </div>
+</header>
+
+<!-- ========== MEET YOUR GUIDE ========== -->
+<section class="section guide" id="guide">
+  <div class="container">
+    <div class="guide__grid">
+
+      <div class="guide__photo reveal">
+        <div class="guide__photo-frame">
+          <img src="guide.jpg" alt="Joey — your guide" />
+        </div>
+        <svg class="guide__photo-seal" viewBox="0 0 60 60" aria-hidden="true">
+          <rect x="3" y="3" width="54" height="54" rx="2" fill="#B83A2C"/>
+          <text x="30" y="38" text-anchor="middle"
+                font-family="Noto Serif SC, Songti SC, serif"
+                font-size="28" font-weight="600" fill="#F5EFE0">东</text>
+        </svg>
+        <div class="guide__photo-caption">
+          <span>北京 · Beijing</span>
+          <span>Spring · 2024</span>
+        </div>
+      </div>
+
+      <div class="guide__text reveal">
+        <p class="eyebrow">Meet your guide · 你的向导</p>
+        <h2 class="heading-cn">你好，我是 Joey</h2>
+        <h2 class="heading-en">A friend who happens<br/>to know <em>every alley.</em></h2>
+
+        <p class="guide__lede">
+          I was born in Beijing, raised between the hutongs and the high-rises.
+          After a decade walking travelers from more than thirty countries
+          through China, I learned one simple thing —
+          <em>the best moments aren't on any guidebook page.</em>
+        </p>
+
+        <p class="guide__story">
+          So I started <strong>ORIENTTRIP</strong> to do it on my own
+          terms — small groups, no tour buses, no rushed checklists.
+          Just the China I would show a friend visiting from abroad.
+          Tea with my old calligraphy teacher in Liulichang. Late-night
+          lamb skewers in a hutong nobody photographs. The Great Wall at
+          dawn, alone.
+        </p>
+
+        <ul class="guide__chips">
+          <li><span>★</span> 10 yrs guiding</li>
+          <li><span>★</span> English · 中文</li>
+          <li><span>★</span> Solo · couples · small groups</li>
+          <li><span>★</span> Licensed China Tour Guide</li>
+        </ul>
+
+        <div class="guide__contact">
+          <a href="#inquiry" class="btn btn--primary">
+            Plan with Joey <span class="arrow"></span>
+          </a>
+          <div class="guide__wechat">
+            <span>WeChat / 微信</span>
+            <strong>joey_orienttrip</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== INTRO / STATS ========== -->
+<section class="section intro" id="intro">
+  <div class="container">
+    <div class="intro__grid">
+      <div class="intro__text reveal">
+        <p class="eyebrow">Why travel with me · 为何同行</p>
+        <h2 class="heading-cn">慢　慢　走　看</h2>
+        <h2 class="heading-en">Small trips, <em>big memory.</em></h2>
+
+        <p style="margin-top: 32px;">
+          I cap every group at six travelers. That's it — six. It's the
+          only way I can answer your questions across dinner, change the
+          plan when the weather shifts, and remember everyone's name on
+          day one.
+        </p>
+        <p>
+          No commissions, no shopping stops, no scripted speeches. Just
+          a real Beijinger showing you a country he loves, on a pace that
+          lets you actually taste it.
+        </p>
+      </div>
+
+      <div class="stats reveal">
+        <div class="stat">
+          <div class="stat__num">10<sup>+</sup></div>
+          <div class="stat__label">Years Guiding</div>
+          <div class="stat__label-cn">十载 同行</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">30<sup>+</sup></div>
+          <div class="stat__label">Countries Hosted</div>
+          <div class="stat__label-cn">异国 朋友</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">6</div>
+          <div class="stat__label">Max Group Size</div>
+          <div class="stat__label-cn">六人 小团</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">22</div>
+          <div class="stat__label">Cities I Know</div>
+          <div class="stat__label-cn">城市 熟巷</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DESTINATIONS ========== -->
+<section class="section destinations" id="destinations">
+  <div class="container">
+    <div class="destinations__header reveal">
+      <div>
+        <p class="eyebrow">Where I'll take you · 目的地</p>
+        <h2 class="heading-cn">山河 · 城邑 · 边塞</h2>
+        <h2 class="heading-en">Six lands, <em>one journey.</em></h2>
+      </div>
+      <p class="lede">
+        These are the six places I know best — where I have friends who
+        run tea houses, monks who'll let us share their morning chant,
+        and grannies who taught me how to fold dumplings.
+      </p>
+    </div>
+
+    <div class="destinations__grid">
+
+      <article class="dest reveal">
+        <div class="dest__img">
+          <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="240" fill="#E5DCC4"/>
+            <path d="M0,170 Q80,130 160,160 T320,150 T400,160 L400,200 L0,200 Z" fill="#9A9285" opacity="0.5"/>
+            <rect x="40" y="150" width="320" height="50" fill="#3A332C"/>
+            <rect x="40" y="142" width="320" height="10" fill="#2A241E"/>
+            <path d="M150,142 L150,110 L250,110 L250,142 Z" fill="#3A332C"/>
+            <path d="M140,110 Q200,72 260,110 L250,110 L150,110 Z" fill="#B83A2C"/>
+            <path d="M148,108 L252,108 L255,116 L145,116 Z" fill="#8E2A1F"/>
+            <circle cx="200" cy="78" r="4" fill="#B89968"/>
+            <path d="M180,200 L180,170 Q200,158 220,170 L220,200 Z" fill="#1A1714"/>
+            <ellipse cx="120" cy="135" rx="6" ry="9" fill="#B83A2C"/>
+            <ellipse cx="280" cy="135" rx="6" ry="9" fill="#B83A2C"/>
+            <line x1="120" y1="126" x2="120" y2="120" stroke="#1A1714" stroke-width="1"/>
+            <line x1="280" y1="126" x2="280" y2="120" stroke="#1A1714" stroke-width="1"/>
+          </svg>
+          <span class="dest__index">i.</span>
+        </div>
+        <div class="dest__body">
+          <p class="dest__name-cn">北 京</p>
+          <h3 class="dest__name">Beijing</h3>
+          <p class="dest__desc">
+            My home town. I'll take you into hutongs no tour bus fits in,
+            and to a noodle counter I've been eating at since I was eight.
+          </p>
+          <span class="dest__more">Discover →</span>
+        </div>
+      </article>
+
+      <article class="dest reveal">
+        <div class="dest__img">
+          <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="240" fill="#E8DDB8"/>
+            <path d="M0,180 Q100,150 200,170 T400,160 L400,200 L0,200 Z" fill="#C8A572" opacity="0.5"/>
+            <g fill="#3A332C">
+              <ellipse cx="80"  cy="195" rx="14" ry="6"/><rect x="72" y="150" width="16" height="45" rx="3"/><circle cx="80" cy="140" r="10"/>
+              <ellipse cx="140" cy="195" rx="14" ry="6"/><rect x="132" y="145" width="16" height="50" rx="3"/><circle cx="140" cy="135" r="10"/>
+              <ellipse cx="200" cy="195" rx="14" ry="6"/><rect x="192" y="140" width="16" height="55" rx="3"/><circle cx="200" cy="130" r="10"/>
+              <ellipse cx="260" cy="195" rx="14" ry="6"/><rect x="252" y="145" width="16" height="50" rx="3"/><circle cx="260" cy="135" r="10"/>
+              <ellipse cx="320" cy="195" rx="14" ry="6"/><rect x="312" y="150" width="16" height="45" rx="3"/><circle cx="320" cy="140" r="10"/>
+            </g>
+            <g fill="#1A1714">
+              <path d="M70,140 Q80,128 90,140 Z"/><path d="M130,135 Q140,123 150,135 Z"/>
+              <path d="M190,130 Q200,118 210,130 Z"/><path d="M250,135 Q260,123 270,135 Z"/>
+              <path d="M310,140 Q320,128 330,140 Z"/>
+            </g>
+            <circle cx="320" cy="60" r="22" fill="#B83A2C" opacity="0.75"/>
+          </svg>
+          <span class="dest__index">ii.</span>
+        </div>
+        <div class="dest__body">
+          <p class="dest__name-cn">西 安</p>
+          <h3 class="dest__name">Xi'an</h3>
+          <p class="dest__desc">
+            We'll arrive at the Terracotta Army before the gates open, then
+            cycle the city wall as the loess turns gold at sundown.
+          </p>
+          <span class="dest__more">Discover →</span>
+        </div>
+      </article>
+
+      <article class="dest reveal">
+        <div class="dest__img">
+          <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="240" fill="#DDE6DE"/>
+            <path d="M-20,160 Q40,60 90,160 Z"  fill="#6B6358" opacity="0.55"/>
+            <path d="M60,170 Q140,40 200,170 Z" fill="#3A332C" opacity="0.75"/>
+            <path d="M150,170 Q230,80 280,170 Z" fill="#6B6358" opacity="0.6"/>
+            <path d="M240,170 Q310,55 380,170 Z" fill="#3A332C" opacity="0.7"/>
+            <path d="M340,170 Q400,90 430,170 Z" fill="#6B6358" opacity="0.5"/>
+            <rect x="0" y="170" width="400" height="40" fill="#9AB0A4" opacity="0.55"/>
+            <path d="M60,170 Q140,260 200,170 Z" fill="#3A332C" opacity="0.18"/>
+            <path d="M240,170 Q310,250 380,170 Z" fill="#3A332C" opacity="0.18"/>
+            <line x1="20" y1="195" x2="80"  y2="195" stroke="#F5EFE0" stroke-width="1" opacity="0.6"/>
+            <line x1="120" y1="200" x2="180" y2="200" stroke="#F5EFE0" stroke-width="1" opacity="0.6"/>
+            <line x1="240" y1="190" x2="320" y2="190" stroke="#F5EFE0" stroke-width="1" opacity="0.6"/>
+            <g transform="translate(150,182)">
+              <path d="M0,0 Q15,8 32,0 L28,4 L4,4 Z" fill="#1A1714"/>
+              <line x1="16" y1="0" x2="16" y2="-16" stroke="#1A1714" stroke-width="1.4"/>
+            </g>
+          </svg>
+          <span class="dest__index">iii.</span>
+        </div>
+        <div class="dest__body">
+          <p class="dest__name-cn">桂 林</p>
+          <h3 class="dest__name">Guilin</h3>
+          <p class="dest__desc">
+            A bamboo raft down the Li River with a fisherman I've known for
+            years — and the karst peaks every ink painting tries to capture.
+          </p>
+          <span class="dest__more">Discover →</span>
+        </div>
+      </article>
+
+      <article class="dest reveal">
+        <div class="dest__img">
+          <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="240" fill="#1F2A33"/>
+            <circle cx="80" cy="60" r="18" fill="#F5EFE0" opacity="0.85"/>
+            <g fill="#0E1217">
+              <rect x="40" y="120" width="30" height="100"/>
+              <rect x="80" y="90"  width="22" height="130"/>
+              <rect x="125" y="60" width="6" height="160"/>
+              <circle cx="128" cy="90" r="14"/>
+              <circle cx="128" cy="140" r="10"/>
+              <rect x="155" y="70"  width="20" height="150"/>
+              <rect x="185" y="40"  width="18" height="180"/>
+              <polygon points="194,40 194,15 198,15 198,40"/>
+              <rect x="215" y="100" width="24" height="120"/>
+              <rect x="250" y="55"  width="28" height="165"/>
+              <polygon points="264,55 250,30 278,30"/>
+              <rect x="290" y="110" width="22" height="110"/>
+              <rect x="324" y="85"  width="26" height="135"/>
+              <rect x="360" y="130" width="20" height="90"/>
+            </g>
+            <g fill="#FFD78A" opacity="0.85">
+              <rect x="89" y="100" width="2" height="3"/><rect x="93" y="100" width="2" height="3"/>
+              <rect x="89" y="110" width="2" height="3"/><rect x="93" y="110" width="2" height="3"/>
+              <rect x="89" y="130" width="2" height="3"/><rect x="93" y="130" width="2" height="3"/>
+              <rect x="160" y="90" width="2" height="3"/><rect x="166" y="90" width="2" height="3"/>
+              <rect x="160" y="105" width="2" height="3"/><rect x="166" y="105" width="2" height="3"/>
+              <rect x="190" y="60" width="2" height="3"/><rect x="195" y="60" width="2" height="3"/>
+              <rect x="190" y="80" width="2" height="3"/><rect x="195" y="80" width="2" height="3"/>
+              <rect x="220" y="120" width="2" height="3"/><rect x="226" y="120" width="2" height="3"/>
+              <rect x="256" y="80" width="2" height="3"/><rect x="262" y="80" width="2" height="3"/>
+              <rect x="256" y="105" width="2" height="3"/><rect x="262" y="105" width="2" height="3"/>
+              <rect x="295" y="125" width="2" height="3"/><rect x="300" y="125" width="2" height="3"/>
+              <rect x="330" y="100" width="2" height="3"/><rect x="336" y="100" width="2" height="3"/>
+            </g>
+            <rect x="0" y="200" width="400" height="40" fill="#1A1714"/>
+            <line x1="40"  y1="210" x2="100" y2="210" stroke="#F5EFE0" opacity="0.25"/>
+            <line x1="160" y1="215" x2="240" y2="215" stroke="#F5EFE0" opacity="0.25"/>
+            <line x1="300" y1="210" x2="370" y2="210" stroke="#F5EFE0" opacity="0.25"/>
+          </svg>
+          <span class="dest__index">iv.</span>
+        </div>
+        <div class="dest__body">
+          <p class="dest__name-cn">上 海</p>
+          <h3 class="dest__name">Shanghai</h3>
+          <p class="dest__desc">
+            Walk the Bund at first light, lunch in a 1930s lane house, end
+            with cocktails sixty floors above the Huangpu — all on foot.
+          </p>
+          <span class="dest__more">Discover →</span>
+        </div>
+      </article>
+
+      <article class="dest reveal">
+        <div class="dest__img">
+          <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="240" fill="#E8E0CB"/>
+            <path d="M0,140 Q80,90 160,130 T320,120 T400,130 L400,200 L0,200 Z" fill="#6B6358" opacity="0.55"/>
+            <g fill="none" stroke="#3A332C" stroke-width="1.2" opacity="0.7">
+              <path d="M0,150 Q200,170 400,148"/>
+              <path d="M0,158 Q200,180 400,156"/>
+              <path d="M0,166 Q200,190 400,164"/>
+              <path d="M0,174 Q200,200 400,172"/>
+              <path d="M0,182 Q200,210 400,180"/>
+              <path d="M0,190 Q200,220 400,188"/>
+            </g>
+            <g fill="#B83A2C" opacity="0.35">
+              <path d="M0,150 Q200,170 400,148 L400,158 Q200,180 0,158 Z"/>
+              <path d="M0,166 Q200,190 400,164 L400,174 Q200,200 0,174 Z"/>
+            </g>
+            <circle cx="200" cy="80" r="26" fill="#B83A2C" opacity="0.55"/>
+            <circle cx="200" cy="80" r="14" fill="#B83A2C" opacity="0.85"/>
+            <g fill="#1A1714">
+              <rect x="48" y="120" width="14" height="10"/>
+              <polygon points="46,120 64,120 55,114"/>
+              <rect x="330" y="118" width="14" height="10"/>
+              <polygon points="328,118 346,118 337,112"/>
+            </g>
+          </svg>
+          <span class="dest__index">v.</span>
+        </div>
+        <div class="dest__body">
+          <p class="dest__name-cn">云 南</p>
+          <h3 class="dest__name">Yunnan</h3>
+          <p class="dest__desc">
+            Mushroom hunting in Shangri-La, Naxi cuisine in Lijiang's old
+            town, and rice terraces glowing crimson at dusk.
+          </p>
+          <span class="dest__more">Discover →</span>
+        </div>
+      </article>
+
+      <article class="dest reveal">
+        <div class="dest__img">
+          <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="240" fill="#D6DCE2"/>
+            <path d="M0,180 L80,90 L120,140 L180,60 L240,130 L300,80 L360,140 L400,100 L400,200 L0,200 Z" fill="#6B6358" opacity="0.6"/>
+            <path d="M180,60 L210,100 L195,100 Z" fill="#F5EFE0" opacity="0.9"/>
+            <path d="M300,80 L320,108 L310,108 Z" fill="#F5EFE0" opacity="0.85"/>
+            <path d="M80,90 L100,118 L90,118 Z" fill="#F5EFE0" opacity="0.85"/>
+            <g fill="#F5EFE0"><rect x="155" y="135" width="90" height="55"/></g>
+            <g fill="#8E2A1F"><rect x="180" y="120" width="40" height="22"/></g>
+            <g fill="#1A1714">
+              <rect x="165" y="148" width="4" height="6"/><rect x="175" y="148" width="4" height="6"/>
+              <rect x="185" y="148" width="4" height="6"/><rect x="195" y="148" width="4" height="6"/>
+              <rect x="205" y="148" width="4" height="6"/><rect x="215" y="148" width="4" height="6"/>
+              <rect x="225" y="148" width="4" height="6"/><rect x="235" y="148" width="4" height="6"/>
+              <rect x="165" y="162" width="4" height="6"/><rect x="175" y="162" width="4" height="6"/>
+              <rect x="185" y="162" width="4" height="6"/><rect x="195" y="162" width="4" height="6"/>
+              <rect x="205" y="162" width="4" height="6"/><rect x="215" y="162" width="4" height="6"/>
+              <rect x="225" y="162" width="4" height="6"/><rect x="235" y="162" width="4" height="6"/>
+              <rect x="188" y="124" width="3" height="4"/><rect x="198" y="124" width="3" height="4"/>
+              <rect x="208" y="124" width="3" height="4"/>
+            </g>
+            <g>
+              <line x1="60" y1="40" x2="340" y2="60" stroke="#1A1714" stroke-width="0.8"/>
+              <rect x="80"  y="42" width="14" height="10" fill="#B83A2C"/>
+              <rect x="110" y="44" width="14" height="10" fill="#C8A572"/>
+              <rect x="140" y="46" width="14" height="10" fill="#1A1714"/>
+              <rect x="170" y="48" width="14" height="10" fill="#7B9E89"/>
+              <rect x="200" y="50" width="14" height="10" fill="#B83A2C"/>
+              <rect x="230" y="52" width="14" height="10" fill="#C8A572"/>
+              <rect x="260" y="54" width="14" height="10" fill="#1A1714"/>
+              <rect x="290" y="56" width="14" height="10" fill="#7B9E89"/>
+            </g>
+          </svg>
+          <span class="dest__index">vi.</span>
+        </div>
+        <div class="dest__body">
+          <p class="dest__name-cn">西 藏</p>
+          <h3 class="dest__name">Tibet</h3>
+          <p class="dest__desc">
+            The Potala at thin-air dawn, a quiet circuit at Tashilhunpo,
+            and butter tea in a courtyard most travelers never find.
+          </p>
+          <span class="dest__more">Discover →</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== JOURNEYS ========== -->
+<section class="section journeys" id="journeys">
+  <div class="container">
+    <div class="journeys__header reveal">
+      <p class="eyebrow">My favorite routes · 精选行程</p>
+      <h2 class="heading-cn" style="margin-top: 8px;">长卷 · 慢游</h2>
+      <h2 class="heading-en">Three trips, <em>I'd do again tomorrow.</em></h2>
+    </div>
+
+    <div class="journeys__list">
+
+      <article class="journey reveal">
+        <div class="journey__visual">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="300" fill="#EFE7D2"/>
+            <path d="M0,220 Q60,110 160,180 Q260,80 360,170 Q400,200 400,220 L400,300 L0,300 Z" fill="#3A332C" opacity="0.7"/>
+            <path d="M0,250 Q100,200 200,240 Q300,200 400,250 L400,300 L0,300 Z" fill="#1A1714" opacity="0.9"/>
+            <g transform="translate(180,200)">
+              <rect x="0" y="0" width="40" height="20" fill="#1A1714"/>
+              <path d="M-6,0 Q20,-18 46,0 Z" fill="#B83A2C"/>
+            </g>
+            <circle cx="320" cy="60" r="20" fill="#F5EFE0" opacity="0.85"/>
+            <circle cx="320" cy="60" r="20" fill="#B83A2C" opacity="0.3"/>
+            <g transform="translate(330,240)">
+              <rect width="34" height="34" fill="#B83A2C"/>
+              <text x="17" y="24" text-anchor="middle" font-family="Noto Serif SC, serif"
+                    font-size="20" font-weight="600" fill="#F5EFE0">京</text>
+            </g>
+          </svg>
+        </div>
+        <div class="journey__body">
+          <span class="journey__index">— Trip No. I</span>
+          <h3 class="journey__title">Beijing, Slowly</h3>
+          <p class="journey__title-cn">京 · 都 · 八 日</p>
+
+          <div class="journey__meta">
+            <div><span>Duration</span><span>8 Days</span></div>
+            <div><span>Group</span><span>Up to 6</span></div>
+            <div><span>From</span><span>¥18,800 / person</span></div>
+          </div>
+
+          <p class="journey__desc">
+            My signature week in my home town — the Forbidden City after
+            tourists thin out, a dinner with the family of a Qing-court chef,
+            and a sunrise hike on an unrestored stretch of the Wall.
+          </p>
+          <a href="#inquiry" class="journey__cta">Ask me about it <span class="arrow"></span></a>
+        </div>
+      </article>
+
+      <article class="journey journey--reverse reveal">
+        <div class="journey__visual">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="300" fill="#DDE6DE"/>
+            <path d="M-20,200 Q40,70 100,200 Z"  fill="#6B6358" opacity="0.55"/>
+            <path d="M60,210 Q150,40 220,210 Z" fill="#3A332C" opacity="0.8"/>
+            <path d="M180,210 Q270,80 340,210 Z" fill="#6B6358" opacity="0.65"/>
+            <path d="M300,210 Q360,90 420,210 Z" fill="#3A332C" opacity="0.7"/>
+            <rect x="0" y="210" width="400" height="60" fill="#9AB0A4" opacity="0.55"/>
+            <path d="M60,210 Q150,330 220,210 Z" fill="#3A332C" opacity="0.2"/>
+            <line x1="20" y1="240" x2="100" y2="240" stroke="#F5EFE0" opacity="0.5"/>
+            <line x1="160" y1="250" x2="240" y2="250" stroke="#F5EFE0" opacity="0.5"/>
+            <line x1="280" y1="240" x2="360" y2="240" stroke="#F5EFE0" opacity="0.5"/>
+            <g transform="translate(160,228)">
+              <path d="M0,0 Q18,10 36,0 L32,5 L4,5 Z" fill="#1A1714"/>
+              <line x1="18" y1="0" x2="18" y2="-22" stroke="#1A1714" stroke-width="1.4"/>
+              <path d="M18,-22 Q34,-16 30,-2 L18,-2 Z" fill="#1A1714" opacity="0.6"/>
+            </g>
+            <g transform="translate(30,30)">
+              <rect width="34" height="34" fill="#B83A2C"/>
+              <text x="17" y="24" text-anchor="middle" font-family="Noto Serif SC, serif"
+                    font-size="20" font-weight="600" fill="#F5EFE0">桂</text>
+            </g>
+          </svg>
+        </div>
+        <div class="journey__body">
+          <span class="journey__index">— Trip No. II</span>
+          <h3 class="journey__title">Rivers of Ink</h3>
+          <p class="journey__title-cn">水 · 墨 · 十 日</p>
+
+          <div class="journey__meta">
+            <div><span>Duration</span><span>10 Days</span></div>
+            <div><span>Route</span><span>Guilin · Yangshuo · Longji</span></div>
+            <div><span>From</span><span>¥24,500 / person</span></div>
+          </div>
+
+          <p class="journey__desc">
+            We drift the Li River at dawn on a private bamboo raft, sleep
+            above the Longji rice terraces in a Yao village, and learn
+            ink-wash painting from a friend of mine — fifth-generation master.
+          </p>
+          <a href="#inquiry" class="journey__cta">Ask me about it <span class="arrow"></span></a>
+        </div>
+      </article>
+
+      <article class="journey reveal">
+        <div class="journey__visual">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="300" fill="#D6DCE2"/>
+            <path d="M0,230 L60,120 L100,180 L160,80 L220,170 L280,100 L340,180 L400,130 L400,260 L0,260 Z"
+                  fill="#6B6358" opacity="0.6"/>
+            <path d="M160,80 L195,135 L175,135 Z" fill="#F5EFE0"/>
+            <path d="M280,100 L302,142 L290,142 Z" fill="#F5EFE0"/>
+            <g transform="translate(140,180)">
+              <rect width="120" height="50" fill="#F5EFE0"/>
+              <rect x="35" y="-15" width="50" height="18" fill="#8E2A1F"/>
+              <g fill="#1A1714" opacity="0.85">
+                <rect x="6" y="14" width="4" height="6"/><rect x="20" y="14" width="4" height="6"/>
+                <rect x="34" y="14" width="4" height="6"/><rect x="48" y="14" width="4" height="6"/>
+                <rect x="62" y="14" width="4" height="6"/><rect x="76" y="14" width="4" height="6"/>
+                <rect x="90" y="14" width="4" height="6"/><rect x="104" y="14" width="4" height="6"/>
+                <rect x="6" y="30" width="4" height="6"/><rect x="20" y="30" width="4" height="6"/>
+                <rect x="34" y="30" width="4" height="6"/><rect x="48" y="30" width="4" height="6"/>
+                <rect x="62" y="30" width="4" height="6"/><rect x="76" y="30" width="4" height="6"/>
+                <rect x="90" y="30" width="4" height="6"/><rect x="104" y="30" width="4" height="6"/>
+              </g>
+            </g>
+            <g>
+              <line x1="40" y1="40" x2="360" y2="60" stroke="#1A1714" stroke-width="0.8"/>
+              <rect x="70"  y="42" width="16" height="12" fill="#B83A2C"/>
+              <rect x="110" y="44" width="16" height="12" fill="#C8A572"/>
+              <rect x="150" y="46" width="16" height="12" fill="#1A1714"/>
+              <rect x="190" y="48" width="16" height="12" fill="#7B9E89"/>
+              <rect x="230" y="50" width="16" height="12" fill="#B83A2C"/>
+              <rect x="270" y="52" width="16" height="12" fill="#C8A572"/>
+              <rect x="310" y="54" width="16" height="12" fill="#1A1714"/>
+            </g>
+            <g transform="translate(330,30)">
+              <rect width="34" height="34" fill="#B83A2C"/>
+              <text x="17" y="24" text-anchor="middle" font-family="Noto Serif SC, serif"
+                    font-size="20" font-weight="600" fill="#F5EFE0">藏</text>
+            </g>
+          </svg>
+        </div>
+        <div class="journey__body">
+          <span class="journey__index">— Trip No. III</span>
+          <h3 class="journey__title">Roof of the World</h3>
+          <p class="journey__title-cn">天 · 路 · 十 四 日</p>
+
+          <div class="journey__meta">
+            <div><span>Duration</span><span>14 Days</span></div>
+            <div><span>Route</span><span>Lhasa · Shigatse · Everest BC</span></div>
+            <div><span>From</span><span>¥38,800 / person</span></div>
+          </div>
+
+          <p class="journey__desc">
+            The highest railway on earth across the Qinghai plateau, dawn
+            at the Potala, and the north face of Everest catching fire at
+            sunset. I'll handle every permit.
+          </p>
+          <a href="#inquiry" class="journey__cta">Ask me about it <span class="arrow"></span></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="services__intro reveal">
+      <div>
+        <p class="eyebrow">How we'll travel · 同行方式</p>
+        <h2 class="heading-cn">三 · 种 · 同 行</h2>
+        <h2 class="heading-en">Three ways to <em>travel with me.</em></h2>
+      </div>
+      <p class="lede">
+        Whether it's just the two of you, a circle of close friends, or a
+        family reunion — the size of your group changes the rhythm of our
+        days. Here's how I usually plan it.
+      </p>
+    </div>
+
+    <div class="services__grid">
+
+      <div class="service reveal">
+        <span class="service__num">— 01</span>
+        <p class="service__title-cn">两 人 · 私 享</p>
+        <h3 class="service__title">Just the Two of You</h3>
+        <p class="service__desc">
+          A couple, a honeymoon, a parent &amp; child. Slowest pace, most
+          flexibility — we can change the plan over breakfast.
+        </p>
+        <ul class="service__features">
+          <li>Private car &amp; driver</li>
+          <li>Boutique stays</li>
+          <li>Flexible daily plan</li>
+          <li>From ¥3,200 / day</li>
+        </ul>
+      </div>
+
+      <div class="service reveal">
+        <span class="service__num">— 02</span>
+        <p class="service__title-cn">三 至 六 人</p>
+        <h3 class="service__title">A Small Group of Friends</h3>
+        <p class="service__desc">
+          My favorite size — enough laughter at dinner, small enough that
+          nobody gets lost in a crowd. The sweet spot.
+        </p>
+        <ul class="service__features">
+          <li>Max 6 travelers</li>
+          <li>Cost per person drops fast</li>
+          <li>Group-paced but never rushed</li>
+          <li>From ¥1,800 / day · person</li>
+        </ul>
+      </div>
+
+      <div class="service reveal">
+        <span class="service__num">— 03</span>
+        <p class="service__title-cn">家 庭 · 多 代</p>
+        <h3 class="service__title">Family &amp; Multi-Gen</h3>
+        <p class="service__desc">
+          Grandparents, parents, kids — different paces, one shared trip.
+          I plan parallel tracks so every age sees their China.
+        </p>
+        <ul class="service__features">
+          <li>Up to 12 across two cars</li>
+          <li>Kid-friendly stops</li>
+          <li>Accessible-pace options</li>
+          <li>Quote on request</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== VOICES ========== -->
+<section class="section voices" id="voices">
+  <div class="container">
+    <div class="voices__header reveal">
+      <p class="eyebrow">Friends I've hosted · 老朋友</p>
+      <h2 class="heading-cn">远方　来信</h2>
+      <h2 class="heading-en">Letters <em>from afar.</em></h2>
+    </div>
+
+    <div class="voices__grid">
+
+      <div class="voice reveal">
+        <span class="voice__quote-mark">"</span>
+        <p class="voice__quote">
+          Joey isn't a tour guide — he's the friend in Beijing you wish
+          you had. He took us to a midnight noodle stand I still dream about.
+        </p>
+        <div class="voice__author">
+          <div class="voice__avatar">CR</div>
+          <div class="voice__who">
+            <div class="voice__name">Claudia &amp; Robert</div>
+            <span class="voice__meta">München, Germany</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice reveal">
+        <span class="voice__quote-mark">"</span>
+        <p class="voice__quote">
+          Three weeks across six provinces with Joey, and every single meal
+          was thoughtfully chosen. He plans like a friend, not an agency.
+        </p>
+        <div class="voice__author">
+          <div class="voice__avatar">M</div>
+          <div class="voice__who">
+            <div class="voice__name">Margaux Lefèvre</div>
+            <span class="voice__meta">Paris, France</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice reveal">
+        <span class="voice__quote-mark">"</span>
+        <p class="voice__quote">
+          We came as clients, left as friends. Joey replies to our WeChat
+          messages two years later — still recommending restaurants in Xi'an.
+        </p>
+        <div class="voice__author">
+          <div class="voice__avatar">JS</div>
+          <div class="voice__who">
+            <div class="voice__name">James &amp; Hannah Sutherland</div>
+            <span class="voice__meta">London, UK</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== INQUIRY ========== -->
+<section class="section inquiry" id="inquiry">
+  <div class="container">
+    <div class="inquiry__grid">
+      <div class="inquiry__left reveal">
+        <p class="eyebrow">Say hello · 来 信</p>
+        <h2 class="heading-cn">来 信 问 路</h2>
+        <h2 class="heading-en">Drop me a line, <em>I reply within a day.</em></h2>
+
+        <ul class="inquiry__points">
+          <li>
+            <i>i.</i>
+            <span>
+              <b>You'll hear from me, not a bot</b>
+              Every message lands in my inbox. I reply within 24 hours,
+              from a real city in a real time zone.
+            </span>
+          </li>
+          <li>
+            <i>ii.</i>
+            <span>
+              <b>First sketch is on me</b>
+              No deposit until you love the plan. I'll send a day-by-day
+              draft and a transparent quote — free.
+            </span>
+          </li>
+          <li>
+            <i>iii.</i>
+            <span>
+              <b>English or 中文 — whichever feels right</b>
+              Text me on WeChat, write an email, or jump on a video call.
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="form reveal" onsubmit="event.preventDefault(); alert('Thanks — I will write back within 24 hours.');">
+        <div class="form__row">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" type="text" placeholder="Jane Doe" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="jane@example.com" required />
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="dest">Where do you want to go?</label>
+            <select id="dest">
+              <option>Beijing</option>
+              <option>Xi'an</option>
+              <option>Guilin &amp; Yangshuo</option>
+              <option>Shanghai</option>
+              <option>Yunnan</option>
+              <option>Tibet</option>
+              <option>Multi-city / not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="dates">Rough dates</label>
+            <input id="dates" type="text" placeholder="e.g. Oct 2026, ~12 days" />
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="party">How many of you?</label>
+            <input id="party" type="text" placeholder="2 adults" />
+          </div>
+          <div class="field">
+            <label for="lang">Language</label>
+            <select id="lang">
+              <option>English</option>
+              <option>中文 (Chinese)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field field--full">
+            <label for="msg">Tell me about your dream trip</label>
+            <textarea id="msg" placeholder="Anniversary in Suzhou gardens, a week off-the-grid in Yunnan, kosher meals throughout…"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--primary form__submit">
+          Send to Joey <span class="arrow"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="#">
+          <span class="brand__mark">东</span>
+          <span class="brand__name">
+            <span class="brand__en">ORIENTTRIP</span>
+            <span class="brand__cn">东 · 方 · 之 · 旅</span>
+          </span>
+        </a>
+        <p class="footer__about">
+          A one-person travel atelier run by Joey, a licensed Beijing
+          guide. Small groups, slow days, real China — for travelers
+          who came for more than a photograph.
+        </p>
+      </div>
+
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#guide">Your Guide</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#journeys">Trips</a></li>
+          <li><a href="#services">How We Travel</a></li>
+          <li><a href="#voices">Old Friends</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Find me on</h5>
+        <ul>
+          <li><a href="#">WeChat · joey_orienttrip</a></li>
+          <li><a href="#">Instagram · @orienttrip</a></li>
+          <li><a href="#">Xiaohongshu · 东方之旅</a></li>
+          <li><a href="#">YouTube · ORIENTTRIP</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h5>Reach me</h5>
+        <p><span>Based in</span>Beijing, China</p>
+        <p><span>Phone / WhatsApp</span>+86 138 0000 0000</p>
+        <p><span>Email</span>hello@orienttrip.com</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 ORIENTTRIP · Joey Cheng · Licensed China Tour Guide</span>
+      <div class="lang">
+        <span>EN</span><span>中文</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
