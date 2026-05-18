@@ -1285,6 +1285,459 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* =========================================================
+   PHOTO GALLERY — 同游影集 (polaroid wall)
+   ========================================================= */
+.gallery {
+  background: var(--paper-warm);
+  padding: 140px 0;
+  position: relative;
+}
+.gallery__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 80px;
+}
+.gallery__header .lede { margin-top: 0; }
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.poly {
+  --tilt: 0deg;
+  background: var(--paper);
+  padding: 14px 14px 56px;
+  position: relative;
+  box-shadow:
+    0 1px 0 var(--line),
+    0 18px 36px -22px rgba(26, 23, 20, 0.4);
+  transform: rotate(var(--tilt));
+  transition: transform 0.55s ease, box-shadow 0.55s ease, z-index 0s 0.3s;
+  margin: 0;
+}
+.poly:hover {
+  transform: rotate(0) translateY(-8px) scale(1.03);
+  box-shadow:
+    0 1px 0 var(--line),
+    0 28px 56px -16px rgba(26, 23, 20, 0.5);
+  z-index: 3;
+  transition: transform 0.55s ease, box-shadow 0.55s ease, z-index 0s 0s;
+}
+.poly__photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--paper-warm);
+}
+.poly__photo svg {
+  width: 100%; height: 100%;
+  display: block;
+  transition: transform 0.7s ease;
+}
+.poly:hover .poly__photo svg { transform: scale(1.05); }
+
+.poly figcaption {
+  position: absolute;
+  left: 14px; right: 14px; bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 6px;
+}
+.poly__loc {
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--vermilion);
+  line-height: 1.2;
+}
+.poly__meta {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mist);
+}
+
+.gallery__note {
+  margin: 56px 0 0;
+  text-align: center;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-pale);
+}
+.gallery__note span {
+  color: var(--vermilion);
+  margin-right: 6px;
+}
+
+/* =========================================================
+   PACKAGES — 行程速览 (grid + filters)
+   ========================================================= */
+.packages {
+  padding: 160px 0;
+  position: relative;
+}
+.packages__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.packages__header .eyebrow {
+  display: inline-flex;
+}
+
+.packages__filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+.filter {
+  padding: 11px 22px;
+  background: transparent;
+  border: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-family: var(--sans-en);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.filter:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.filter.is-active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.packages__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.package {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+.package:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 46px -22px rgba(26, 23, 20, 0.3);
+}
+.package__img {
+  position: relative;
+  height: 180px;
+  background: var(--paper-warm);
+  overflow: hidden;
+}
+.package__img svg {
+  width: 100%; height: 100%;
+  transition: transform 0.7s ease;
+}
+.package:hover .package__img svg { transform: scale(1.06); }
+
+.package__tag {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: var(--vermilion);
+  color: var(--paper);
+  padding: 5px 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.package__body {
+  padding: 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.package__title {
+  font-family: var(--serif-en);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+.package__title-cn {
+  font-family: var(--serif-cn);
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  color: var(--vermilion);
+  margin: 0 0 18px;
+}
+.package__hl {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  flex: 1;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink-pale);
+}
+.package__hl li {
+  padding-left: 16px;
+  position: relative;
+}
+.package__hl li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--vermilion);
+}
+.package__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--ink-pale);
+}
+.package__foot strong {
+  font-family: var(--serif-en);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+  font-style: italic;
+}
+.package__foot a {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--ink);
+  transition: all 0.25s;
+}
+.package__foot a:hover {
+  color: var(--vermilion);
+  border-color: var(--vermilion);
+}
+
+.packages__custom {
+  text-align: center;
+  margin: 60px 0 0;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--ink-soft);
+}
+.packages__custom a {
+  color: var(--vermilion);
+  border-bottom: 1px solid var(--vermilion);
+  padding-bottom: 2px;
+  transition: color 0.3s;
+}
+.packages__custom a:hover { color: var(--vermilion-deep); }
+
+/* =========================================================
+   LANGUAGES — 多语向导
+   ========================================================= */
+.languages {
+  padding: 140px 0;
+  background: var(--paper-warm);
+}
+.languages__header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 64px;
+}
+.languages__header .lede {
+  margin: 28px auto 0;
+}
+
+.languages__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+.lang {
+  padding: 36px 22px 32px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s;
+}
+.lang:last-child { border-right: none; }
+.lang:hover { background: rgba(184, 58, 44, 0.04); }
+
+.lang--primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+.lang--primary:hover { background: var(--ink); }
+.lang--primary .lang__detail { color: rgba(245, 239, 224, 0.55); }
+.lang--primary .lang__rate { color: #E89280; }
+.lang--primary .lang__flag {
+  background: var(--vermilion);
+  color: var(--paper);
+}
+
+.lang__flag {
+  width: 42px; height: 42px;
+  display: grid;
+  place-items: center;
+  background: var(--paper-warm);
+  border: 1px solid var(--line);
+  font-family: var(--serif-cn);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.lang__name {
+  font-family: var(--serif-en);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.lang__detail {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-mist);
+}
+.lang__rate {
+  margin-top: 4px;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--vermilion);
+}
+
+/* =========================================================
+   FAQ — 常见问题
+   ========================================================= */
+.faq { padding: 140px 0; }
+.faq__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.faq__header .eyebrow { display: inline-flex; }
+
+.faq__list {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.faq__item {
+  border-top: 1px solid var(--line);
+  transition: background 0.3s;
+}
+.faq__item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.faq__item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 28px 50px 28px 0;
+  font-family: var(--serif-en);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--ink);
+  position: relative;
+  transition: color 0.3s;
+  outline: none;
+}
+.faq__item summary::-webkit-details-marker,
+.faq__item summary::marker { display: none; content: ""; }
+.faq__item summary::after {
+  content: "";
+  position: absolute;
+  right: 8px; top: 50%;
+  width: 18px; height: 18px;
+  border-right: 1px solid var(--vermilion);
+  border-bottom: 1px solid var(--vermilion);
+  transform: translateY(-65%) rotate(45deg);
+  transition: transform 0.4s ease;
+}
+.faq__item[open] summary::after {
+  transform: translateY(-30%) rotate(-135deg);
+}
+.faq__item summary:hover { color: var(--vermilion); }
+
+.faq__answer {
+  padding: 0 60px 32px 0;
+  animation: fadeIn 0.4s ease;
+}
+.faq__answer p {
+  margin: 0;
+  font-family: var(--serif-en);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink-pale);
+  font-weight: 300;
+  max-width: 720px;
+}
+.faq__answer p strong {
+  font-weight: 500;
+  color: var(--ink);
+  font-style: italic;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   RESPONSIVE — new sections
+   ========================================================= */
+@media (max-width: 1200px) {
+  .gallery__grid,
+  .packages__grid { grid-template-columns: repeat(3, 1fr); }
+  .languages__grid { grid-template-columns: repeat(3, 1fr); }
+  .lang { border-right: 1px solid var(--line); }
+  .lang:nth-child(3n) { border-right: none; }
+  .lang:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 880px) {
+  .gallery__header { grid-template-columns: 1fr; gap: 30px; }
+  .gallery__grid,
+  .packages__grid { grid-template-columns: repeat(2, 1fr); }
+  .languages__grid { grid-template-columns: repeat(2, 1fr); }
+  .lang:nth-child(3n) { border-right: 1px solid var(--line); }
+  .lang:nth-child(2n) { border-right: none; }
+  .lang:nth-child(-n+4) { border-bottom: 1px solid var(--line); }
+  .faq__item summary { font-size: 19px; padding-right: 36px; }
+  .faq__answer p { font-size: 16px; }
+  .faq__answer { padding-right: 30px; }
+}
+@media (max-width: 560px) {
+  .gallery__grid,
+  .packages__grid { grid-template-columns: 1fr; }
+  .languages__grid { grid-template-columns: 1fr; }
+  .lang { border-right: none !important; border-bottom: 1px solid var(--line) !important; }
+  .lang:last-child { border-bottom: none !important; }
+  .packages__filters { gap: 6px; }
+  .filter { padding: 8px 14px; font-size: 10px; letter-spacing: 0.18em; }
+}
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (max-width: 1024px) {
